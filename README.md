@@ -16,6 +16,9 @@ This is a project for demonstrating the second-killing activity for e-commerce s
  
  
 3. run demo
+git clone https://github.com/pizhigang/demo-gift.git
+cd demo-gift
+mvn clean package
 java -jar target/demo-1.0-SNAPSHOT.jar --redis.ip=localhost --redis.port=6379 --gift.count=10000
  
 4. load test 
