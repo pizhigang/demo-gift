@@ -19,5 +19,5 @@ This is a project for demonstrating the second-killing activity for e-commerce s
 java -jar target/demo-1.0-SNAPSHOT.jar --redis.ip=localhost --redis.port=6379 --gift.count=10000
  
 4. load test 
-\\#This runs a benchmark for 10 seconds, using 4 threads, and keeping 500 HTTP connections open.
+\#This runs a benchmark for 10 seconds, using 4 threads, and keeping 500 HTTP connections open.
 wrk -t4 -c500 -d10s http://localhost:8080/gift/
