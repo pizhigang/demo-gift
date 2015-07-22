@@ -1,7 +1,8 @@
 This is a project for demonstrating the second-killing activity for e-commerce shop.
 
+It is based on Spring Boot, and making use of redis for the persistence.
 
-1. 安装 redis
+1. install redis
  wget http://download.redis.io/releases/redis-3.0.3.tar.gz
  tar xzf redis-3.0.3.tar.gz
  cd redis-3.0.3
@@ -9,7 +10,7 @@ This is a project for demonstrating the second-killing activity for e-commerce s
  src/redis-server
  src/redis-cli
  
-2. 安装 wrk
+2. install wrk
  git clone https://github.com/wg/wrk.git
  cd wrk
  make
