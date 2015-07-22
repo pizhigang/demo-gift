@@ -1,27 +1,26 @@
-This is a project for demonstrating the second-killing activity for e-commerce shop.
+This is a project for demonstrating the second-killing activity for e-commerce shop.<br /><br />
 
-It is based on Spring Boot, and making use of redis for the persistence.
+It is based on Spring Boot, and making use of redis for the persistence.<br />
 
-1. install redis
- wget http://download.redis.io/releases/redis-3.0.3.tar.gz
- tar xzf redis-3.0.3.tar.gz
- cd redis-3.0.3
- make
- src/redis-server
- src/redis-cli
+##1. install redis
+ wget http://download.redis.io/releases/redis-3.0.3.tar.gz<br />
+ tar xzf redis-3.0.3.tar.gz<br />
+ cd redis-3.0.3<br />
+ make<br />
+ src/redis-server<br />
+ src/redis-cli<br />
  
-2. install wrk
- git clone https://github.com/wg/wrk.git
- cd wrk
- make
+##2. install wrk
+ git clone https://github.com/wg/wrk.git<br />
+ cd wrk<br />
+ make<br />
  
+##3. run demo
+git clone https://github.com/pizhigang/demo-gift.git<br />
+cd demo-gift<br />
+mvn clean package<br />
+java -jar target/demo-1.0-SNAPSHOT.jar --redis.ip=localhost --redis.port=6379 --gift.count=10000<br />
  
-3. run demo
-git clone https://github.com/pizhigang/demo-gift.git
-cd demo-gift
-mvn clean package
-java -jar target/demo-1.0-SNAPSHOT.jar --redis.ip=localhost --redis.port=6379 --gift.count=10000
- 
-4. load test 
-\#This runs a benchmark for 10 seconds, using 4 threads, and keeping 500 HTTP connections open.
-wrk -t4 -c500 -d10s http://localhost:8080/gift/
+##4. load test 
+\#This runs a benchmark for 10 seconds, using 4 threads, and keeping 500 HTTP connections open.<br />
+wrk -t4 -c500 -d10s http://localhost:8080/gift/<br />
