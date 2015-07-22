@@ -1,0 +1,1 @@
+This is a project for demonstrating the second-killing activity for e-commerce shop.
