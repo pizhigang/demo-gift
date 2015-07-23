@@ -8,7 +8,7 @@ It is based on [Spring Boot](http://projects.spring.io/spring-boot/), and making
  cd redis-3.0.3<br />
  make<br />
  src/redis-server<br />
- \# another console <br />
+ \# another console <br />, to clean up the database for re-run the test, <b>PLEASE NOTE THAT IT WILL EMPTY ALL OF THE DATABASE</b>.
  src/redis-cli flushall
  
 ##2. install wrk
