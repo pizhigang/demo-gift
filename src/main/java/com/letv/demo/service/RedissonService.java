@@ -8,6 +8,7 @@ package com.letv.demo.service;
 
 import org.redisson.Redisson;
 import org.redisson.core.RAtomicLong;
+import org.redisson.core.RLock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
@@ -19,9 +20,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @Configuration
-public class DistributedAtomicLong {
+public class RedissonService {
 
     public static final String NAME_GIFT_COUNT = "giftCount";
+    public static final String NAME_GIFT_LOCK = "giftLock";
 
     @Value("${gift.count}")
     private long giftCount;
@@ -38,6 +40,12 @@ public class DistributedAtomicLong {
     public long getAndDecrement() {
         Redisson redisson = redissonConfig.getRedisson();
         return redisson.getAtomicLong(NAME_GIFT_COUNT).getAndDecrement();
+    }
+
+    public RLock getLock() {
+        Redisson redisson = redissonConfig.getRedisson();
+        RLock lock = redisson.getLock(NAME_GIFT_LOCK);
+        return lock;
     }
 
     /**

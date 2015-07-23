@@ -20,7 +20,9 @@ import org.springframework.stereotype.Repository;
  * cd redis-3.0.3
  * make
  * src/redis-server
- * src/redis-cli
+ * 
+ * <another console>
+ * src/redis-cli flushall
  * </pre>
  *
  * @author <a href="mailto:pizhigang@letv.com">pizhigang</a>

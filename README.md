@@ -8,6 +8,8 @@ It is based on [Spring Boot](http://projects.spring.io/spring-boot/), and making
  cd redis-3.0.3<br />
  make<br />
  src/redis-server<br />
+ <another console>
+ src/redis-cli flushall
  
 ##2. install wrk
  git clone https://github.com/wg/wrk.git<br />
@@ -21,5 +23,8 @@ mvn clean package<br />
 java -jar target/demo-1.0-SNAPSHOT.jar --redis.ip=localhost --redis.port=6379 --gift.count=10000<br />
  
 ##4. load test 
-\#This runs a benchmark for 10 seconds, using 4 threads, and keeping 500 HTTP connections open.<br />
+\# mock DDos - This runs a benchmark for 10 seconds, using 4 threads, and keeping 500 HTTP connections open.<br />
 wrk -t4 -c500 -d10s http://localhost:8080/gift/<br />
+
+\# the normal case - one use can only get gift once
+wrk -t4 -c100 -d2s http://localhost:8080/gift/1

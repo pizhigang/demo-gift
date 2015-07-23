@@ -8,7 +8,7 @@ package com.letv.demo;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.letv.demo.service.DistributedAtomicLong;
+import com.letv.demo.service.RedissonService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -20,6 +20,8 @@ import org.springframework.context.ApplicationContext;
  * java -jar target/demo-1.0-SNAPSHOT.jar --debug --redis.ip=localhost --redis.port=6379 --gift.count=10000
  * 
  * ./wrk -t4 -c100 -d10s http://localhost:8080/gift/
+ * 
+ * ./wrk -t4 -c100 -d2s http://localhost:8080/gift/1
  * </code>
  *
  * @author <a href="mailto:pizhigang@letv.com">pizhigang</a>
@@ -34,9 +36,9 @@ public class Example {
         ApplicationContext ctx = SpringApplication.run(Example.class, args);
 
         //　init the system status
-        DistributedAtomicLong dAtomicLong = ctx.getBean(DistributedAtomicLong.class);
+        RedissonService dAtomicLong = ctx.getBean(RedissonService.class);
         dAtomicLong.init();
-        log.info("set the {} = {}", DistributedAtomicLong.NAME_GIFT_COUNT, dAtomicLong.getGiftCount());
+        log.info("set the {} = {}", RedissonService.NAME_GIFT_COUNT, dAtomicLong.getGiftCount());
 
     }
 }
