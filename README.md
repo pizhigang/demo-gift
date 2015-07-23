@@ -8,7 +8,6 @@ It is based on [Spring Boot](http://projects.spring.io/spring-boot/), and making
  cd redis-3.0.3<br />
  make<br />
  src/redis-server<br />
- src/redis-cli<br />
  
 ##2. install wrk
  git clone https://github.com/wg/wrk.git<br />
