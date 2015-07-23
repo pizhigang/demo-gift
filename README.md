@@ -1,6 +1,6 @@
-This is a project for demonstrating the second-killing activity for e-commerce shop.<br /><br />
+This is a project for demonstrating the second-killing activity  typically used by e-commerce shop promotion.<br /><br />
 
-It is based on Spring Boot, and making use of redis for the persistence.<br />
+It is based on [Spring Boot](http://projects.spring.io/spring-boot/), and making use of redis for the persistence.<br />
 
 ##1. install redis
  wget http://download.redis.io/releases/redis-3.0.3.tar.gz<br />
