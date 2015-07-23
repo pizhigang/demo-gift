@@ -1,7 +1,9 @@
 This is a project for demonstrating the second-killing activity  typically used by e-commerce shop promotion.<br /><br />
 
 It is based on [Spring Boot](http://projects.spring.io/spring-boot/), and making use of redis for the persistence.<br />
-
+ * use Redisson AtomicLong to filter the 1st layer - the number of requests can be pass thourgh is not more than the count of the gift. <br />
+ * use Redisson distributed Lock to filter the 2nd layer - only the use who has not been got gift can participate the acitivity, that's, can pass through to the persistency layer.<br />
+    
 ##1. install redis
  wget http://download.redis.io/releases/redis-3.0.3.tar.gz<br />
  tar xzf redis-3.0.3.tar.gz<br />
